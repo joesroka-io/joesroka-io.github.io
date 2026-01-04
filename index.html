@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Joe — Senior IT Leader & Enterprise Architect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Senior IT leader and enterprise architect specializing in Oracle Financials, ERP modernization, cloud migration (AWS), AI-driven delivery, digital transformation, and technical product management."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card-bg: #0b1220;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+      --radius-lg: 18px;
+      --radius-xl: 32px;
+      --transition-fast: 0.2s ease-out;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1d283a 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 20px 64px;
+    }
+    .shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+      box-shadow: var(--shadow-soft);
+      padding: 32px;
+    }
+    @media (min-width: 1024px) {
+      .shell {
+        padding: 40px 48px 48px;
+      }
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 20px;
+    }
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .identity {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.02em;
+    }
+    .role {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 480px;
+    }
+    .header-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    @media (min-width: 768px) {
+      .header-meta {
+        align-items: flex-end;
+      }
+    }
+    .location {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-start;
+    }
+    .tag {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: radial-gradient(circle at top left, #020617 0, #020617 40%, #020617 100%);
+    }
+    .hero {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+        gap: 28px;
+      }
+    }
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .headline {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      max-width: 630px;
+    }
+    .headline strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 30px rgba(56, 189, 248, 0.45);
+    }
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .hero-meta {
+      display: grid;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18) 0, rgba(15, 23, 42, 0.96) 42%, rgba(15, 23, 42, 0.98) 100%);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+    .meta-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .meta-value {
+      text-align: right;
+    }
+    .metric-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    @media (min-width: 900px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+      }
+    }
+    section {
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 18px 16px;
+    }
+    section h2 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .section-title-accent {
+      color: var(--accent);
+    }
+    #contact {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18) 0%, rgba(15, 23, 42, 0.96) 40%, rgba(15, 23, 42, 0.98) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 12px 40px rgba(56, 189, 248, 0.25);
+      padding: 40px 24px;
+      text-align: center;
+      margin: 40px 0;
+      border-radius: var(--radius-xl);
+    }
+    #contact h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    #contact .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (min-width: 640px) {
+      #contact .contact-actions {
+        flex-direction: row;
+      }
+    }
+    #contact .phone-info {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    #contact .phone-info a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #contact .phone-info a:hover {
+      text-decoration: underline;
+    }
+    #contact .phone-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .about-text {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+    .about-text p + p {
+      margin-top: 10px;
+    }
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .list-item-heading {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+    .list-item-sub {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .timeline-item {
+      padding: 10px 10px 9px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+    .timeline-role {
+      font-weight: 500;
+    }
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: right;
+    }
+    .timeline-body {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+    .bullet-list {
+      margin-top: 6px;
+      padding-left: 16px;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+    .bullet-list li + li {
+      margin-top: 3px;
+    }
+    .footer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (min-width: 768px) {
+      .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .footer a:hover {
+      color: var(--accent);
+    }
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="identity">
+        <div class="eyebrow">Senior IT leadership & enterprise architecture</div>
+        <h1>Joe — Technical Product & Engineering Leader</h1>
+        <p class="role">
+          25+ years modernizing Oracle Financials, cloud platforms, and enterprise systems with AI-driven analysis and delivery.
+        </p>
+      </div>
+      <div class="header-meta">
+        <div class="location">Phoenix metro (Scottsdale), AZ · Remote & hybrid</div>
+        <div class="tags">
+          <span class="tag">Oracle E-Business Suite</span>
+          <span class="tag">Enterprise architecture</span>
+          <span class="tag">Cloud migration (AWS)</span>
+          <span class="tag">AI-driven delivery</span>
+          <span class="tag">Technical product management</span>
+          <span class="tag">ERP modernization</span>
+          <span class="tag">Digital transformation</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main">
+        <p class="headline">
+          Senior technology leader driving <strong>ERP modernization, Oracle Financials upgrades, cloud migration (AWS), and enterprise architecture</strong> with AI-driven analysis, pragmatic leadership, and digital transformation to reduce risk and accelerate delivery.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Contact me</a>
+          <a href="#experience" class="btn btn-ghost">View experience</a>
+        </div>
+      </div>
+      <aside class="hero-meta">
+        <div class="meta-row">
+          <div>
+            <div class="meta-label">Recent focus</div>
+            <div class="meta-value">
+              Oracle Financials 12.2.10 upgrades, AWS optimization, AI-assisted architecture, SSO implementation, and SaaS-first process improvement.
+            </div>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div>
+            <div class="meta-label">Leadership scope</div>
+            <div class="meta-value">
+              Global teams delivering ERP upgrades, cloud migrations, integration refactors, and AI-enabled digital transformation.
+              <div class="metric-pill">
+                <span>25+ years · Full stack from dev to strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Bullet-Point Skills Section (Concise & ATS-Friendly) -->
+    <section id="skills-summary">
+      <h2><span class="section-title-accent">Core</span> skills & technologies</h2>
+      <ul class="list">
+        <li>
+          <div class="list-item-heading">Oracle ERP & Financials</div>
+          <div class="list-item-sub">Oracle E-Business Suite (EBS) R12, Oracle Financials (GL, AP, AR, FA, Cash Management), Oracle Database 11g/12c/19c, ERP modernization & R12 upgrades</div>
+        </li>
+        <li>
+          <div class="list-item-heading">Cloud Architecture & Migration</div>
+          <div class="list-item-sub">AWS (ECS, Fargate, RDS, EKS, EC2), Terraform, containerization, infrastructure as code, data center to cloud/colocation migration</div>
+        </li>
+        <li>
+          <div class="list-item-heading">Technical Leadership</div>
+          <div class="list-item-sub">Technical product management, enterprise architecture, Agile/SAFe, roadmap development, stakeholder & vendor management, cross-functional global teams</div>
+        </li>
+        <li>
+          <div class="list-item-heading">AI & Modern Delivery</div>
+          <div class="list-item-sub">AI-driven analysis & automation, AI-enhanced roadmapping, SSO implementation, integration modernization, digital transformation, PL/SQL, Unix shell scripting</div>
+        </li>
+      </ul>
+    </section>
+
+    <div class="grid grid-2">
+      <section id="about">
+        <h2><span class="section-title-accent">Profile</span> overview</h2>
+        <div class="about-text">
+          <p>
+            Senior IT leader and enterprise architect with 25+ years driving ERP modernization, Oracle Financials upgrades, cloud migration to AWS, and AI integration. In 2025–2026, fully incorporated AI copilots into delivery workflows for accelerated analysis, architectural decision-making, and cross-functional communication across Finance, HR, and IT.
+          </p>
+          <p>
+            Expertise spans Oracle EBS technical leadership, cloud engineering (AWS), AI-driven optimization, and pragmatic enterprise architecture. Specialize in complex system simplification, risk reduction, roadmap development, compliance alignment, and data-informed digital transformation.
+          </p>
+        </div>
+      </section>
+
+      <section id="ai-2025">
+        <h2><span class="section-title-accent">2025–2026</span> AI Integration Highlights</h2>
+        <ul class="list">
+          <li>
+            <div class="list-item-heading">AI‑Driven Delivery Acceleration</div>
+            <div class="list-item-sub">
+              Incorporated AI copilots and automation into daily workflows, reducing analysis and documentation time by 30–40% across ERP modernization, cloud migration, and integration initiatives.
+            </div>
+          </li>
+          <li>
+            <div class="list-item-heading">AI‑Enhanced Architecture & Roadmapping</div>
+            <div class="list-item-sub">
+              Used AI to model system dependencies, forecast upgrade risks, and simulate migration paths—improving roadmap accuracy and stakeholder confidence in enterprise architecture.
+            </div>
+          </li>
+          <li>
+            <div class="list-item-heading">AI‑Supported Oracle Financials Operations</div>
+            <div class="list-item-sub">
+              Leveraged AI to analyze patch impacts, identify regression risks, and streamline test planning for Oracle EBS 12.2.10 and database 19c upgrades.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Full Experience Timeline -->
+    <section id="experience">
+      <h2><span class="section-title-accent">Professional</span> experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Technical Product Manager</div>
+              <div class="list-item-sub">University of Phoenix · May 2021 – Present · Remote</div>
+            </div>
+            <div class="timeline-meta">Oracle Financials & ERP platforms</div>
+          </div>
+          <div class="timeline-body">
+            <p>Own strategy and delivery for Oracle Financials and related enterprise platforms, bridging stakeholders, architects, and engineers to modernize core finance capabilities.</p>
+            <ul class="bullet-list">
+              <li>Led global team to upgrade Oracle EBS from 12.1.3 to 12.2.10, including database upgrades from 11g/12c to 19c.</li>
+              <li>Implemented SSO with Oracle Financials 12.2.10, improving security, UX, and identity alignment.</li>
+              <li>Optimized applications using AWS services (RDS, EKS, EC2, ECS) and SaaS/cloud-native-first approach.</li>
+              <li>Balanced technical debt and maintenance with stakeholder demands for new functionality.</li>
+              <li>Managed license/support renewals, budgeting, and vendor relationships.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Information Technology Specialist</div>
+              <div class="list-item-sub">University of Phoenix · May 2018 – May 2021 · On-site</div>
+            </div>
+            <div class="timeline-meta">Cloud migration & data center exit</div>
+          </div>
+          <div class="timeline-body">
+            <p>Focused on infrastructure and integration modernization during shift to cloud and colocation models.</p>
+            <ul class="bullet-list">
+              <li>Led migration from legacy OSB services to AWS ECS/Fargate using Terraform.</li>
+              <li>Decommissioned legacy infrastructure while maintaining uptime and compliance.</li>
+              <li>Migrated 200+ servers from on-premises data center to colocation.</li>
+              <li>Drove Oracle database and OS upgrades for EBS and COTS applications.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Senior Software Engineering Manager</div>
+              <div class="list-item-sub">University of Phoenix · May 2015 – Apr 2018 · On-site</div>
+            </div>
+            <div class="timeline-meta">Engineering leadership</div>
+          </div>
+          <div class="timeline-body">
+            <p>Led engineering teams supporting major integrations and vendor relationships for student and financial systems.</p>
+            <ul class="bullet-list">
+              <li>Led teams through major integration changes for financial aid system replacement.</li>
+              <li>Managed license and contract renewals for key vendors.</li>
+              <li>Supported transition from waterfall to Agile/SAFe delivery model across IT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Application Development Manager</div>
+              <div class="list-item-sub">University of Phoenix · May 2010 – Apr 2015 · On-site</div>
+            </div>
+            <div class="timeline-meta">Global dev & analysis team</div>
+          </div>
+          <div class="timeline-body">
+            <p>Tech lead and manager for global team supporting Oracle Financials and COTS integrations.</p>
+            <ul class="bullet-list">
+              <li>Integrated new COTS collection software with Oracle Financials.</li>
+              <li>Oversaw delivery, quality, and support for finance-related applications.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Software Application Developer</div>
+              <div class="list-item-sub">University of Phoenix · Apr 2000 – Apr 2010 · On-site</div>
+            </div>
+            <div class="timeline-meta">Oracle EBS engineering</div>
+          </div>
+          <div class="timeline-body">
+            <p>Hands-on Oracle E-Business Suite development and integration across finance and back-office domains.</p>
+            <ul class="bullet-list">
+              <li>Developed and maintained Oracle EBS forms/reports, PL/SQL, Unix shell scripts, Pro*C, Java, and web services.</li>
+              <li>Translated business requirements into scalable, maintainable solutions for finance stakeholders.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section with Medium-Sized Buttons -->
+    <section id="contact">
+      <h2><span class="section-title-accent">Let's Connect</span> — Open to Opportunities in ERP Modernization & Enterprise Architecture</h2>
+      <div class="contact-actions">
+        <a href="mailto:jmsroka01@yahoo.com" class="btn btn-primary">
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/joseph-sroka-37421016" target="_blank" rel="noopener" class="btn btn-primary">
+          View LinkedIn Profile
+        </a>
+      </div>
+      <div class="phone-info">
+        <a href="tel:6026926817">(602) 692-6817</a>
+        <div class="phone-note">Text preferred — fastest way to reach me</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Joe. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <span>·</span>
+        <a href="#experience">Experience</a>
+        <span>·</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
